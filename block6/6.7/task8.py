@@ -4,10 +4,11 @@
 # по данным числам X, Y, P определяет, сколько лет пройдет, прежде чем сумма достигнет значения Y
 savings = int(input('Введите баланс вклада: '))
 profitpercent = int(input('Введите процентную ставку вклада: '))
-goal = int(input('Сколько денег нужно накопить?'))
+goal = int(input('Сколько денег нужно накопить? '))
 yearcounter = 0
 while savings < goal:
     percent = profitpercent / 100
-    savings += percent
+    savings = savings + (savings * percent)
     savings //= 1
-    yearcounter
+    yearcounter += 1
+print(yearcounter, 'года уйдёт на то, чтобы накопить', str(goal) + '₽', 'положив изначально на вклад', str(savings) + '₽')
