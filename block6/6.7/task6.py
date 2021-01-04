@@ -8,10 +8,10 @@ num = int(input('Введите число: '))
 negcount = 0
 poscount = 0
 while num != 0:
-    num = int(input('Введите следующее число: '))
     if num > 0:
         poscount += 1
     else:
         negcount += 1
+    num = int(input('Введите следующее число: '))
 print('Количество положительных чисел:', poscount)
 print('Количество отрицательных чисел:', negcount)

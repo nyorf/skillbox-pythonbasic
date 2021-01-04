@@ -20,3 +20,7 @@ while ticket != 0:
     counter += 1
 print('Сумма первых трех цифр =', firstthree_summ)
 print('Сумма последних трёх цифр =', lastthree_summ)
+if firstthree_summ == lastthree_summ:
+    print('Ваш билет - счастливый!')
+else:
+    print('К сожалению, вам попался обычный билет')
