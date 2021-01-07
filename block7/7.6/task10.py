@@ -10,6 +10,5 @@ for card in range(1, lastCard + 1):
     cardSumm += card
 for card in range(lastCard - 1):
     remainingCard = int(input('Введите номер карточки: '))
-    inputCardSumm += remainingCard
-missedCard = cardSumm - inputCardSumm
-print('Потеряли карточку под номером', missedCard)
+    cardSumm -= remainingCard
+print('Потеряли карточку под номером', cardSumm)
