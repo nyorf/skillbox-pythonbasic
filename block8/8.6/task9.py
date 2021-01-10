@@ -3,12 +3,11 @@
 x = int(input('Введите число X: '))
 totalNumerator = 1
 totalDenominator = 1
-for number in range(1, 65):
-    numNumber = number * 2 - 1
-    denomNumber = 
-    numerator = x - number * 2 + 1 #
-    totalNumerator *= numerator #
-    denominator = x - number * 2 #
-    totalDenominator *= denominator #
-    print(numNumber)
-
+for numUp in range(2, 7):
+    numr = 2 * 2 ** (numUp - 1)
+    totalNumerator *= (x - numr)
+for numDenom in range(2, 7):
+    denomr = (2 * 2 ** (numDenom - 1)) - 1
+    totalDenominator *= (x - denomr)
+result = totalNumerator / totalDenominator
+print('Ответ:', result)
