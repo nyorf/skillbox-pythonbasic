@@ -7,10 +7,9 @@ educational_grant = int(input('Какая у вас стипендия? '))
 expenses = int(input('А какие у вас расходы? '))
 totalGrant = 0
 totalExpenses = 0
-for month in range(2, 11):
-    counter += 1
+for month in range(2, 12):
     totalExpenses += expenses
     totalGrant += educational_grant
     expenses = expenses + (expenses * 0.03)
 remainingMoney = totalExpenses - totalGrant
-print('У родителей нужно попросить', remainingMoney // 1 + 1, 'рублей.')
+print('У родителей нужно попросить', remainingMoney / 1, 'рублей.')
