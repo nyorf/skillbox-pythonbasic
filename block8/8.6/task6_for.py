@@ -1,6 +1,11 @@
+# Задача 6. Письмо
+# У нас есть квадратный конверт размера 12х12 сантиметров и письмо на квадратном листе бумаги, которое не помещается в
+# конверт. Напишите программу, которая подскажет сколько раз нужно сложить письмо пополам, чтобы оно поместилось в
+# конверт. Размеры письма вводятся с клавиатуры
 letterSize = int(input('Введите размеры листа с письмом: '))
-envelopeSize = 12
+letterDim = letterSize * letterSize
+envelopeSize = 12 * 12
 folds = 0
-for size in range(letterSize, envelopeSize-1, -(letterSize // 2)):
+for size in range(letterDim, envelopeSize, -(letterDim // 2)):
     folds += 2
-    print(folds)
+print('Сгибов нужно:', folds)
