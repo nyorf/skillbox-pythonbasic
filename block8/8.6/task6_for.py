@@ -1,6 +1,6 @@
 letterSize = int(input('Введите размеры листа с письмом: '))
-envelopeWidth = 12
-envelopeLength = 12
+envelopeSize = 12
 folds = 0
-for size in range(letterSize, 11, -(letterSize // 2)):
-    print(size)
+for size in range(letterSize, envelopeSize-1, -(letterSize // 2)):
+    folds += 2
+    print(folds)
