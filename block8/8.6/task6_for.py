@@ -3,9 +3,12 @@
 # конверт. Напишите программу, которая подскажет сколько раз нужно сложить письмо пополам, чтобы оно поместилось в
 # конверт. Размеры письма вводятся с клавиатуры
 letterSize = int(input('Введите размеры листа с письмом: '))
-letterDim = letterSize * letterSize
-envelopeSize = 12 * 12
+envelopeSize = 12
 folds = 0
-for size in range(letterDim, envelopeSize, -(letterDim // 2)):
-    folds += 2
+for i in range(letterSize, envelopeSize, -1):
+    if letterSize < 12:
+        break
+    else:
+        letterSize //= 2
+        folds += 2
 print('Сгибов нужно:', folds)
