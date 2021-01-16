@@ -1,11 +1,11 @@
-text = input('Введите текст: ')
-letterCounter = 0
+text = input('Введите текст: ') + ' '
+letterCount = 0
 longestWord = 0
 for letter in text:
     if letter == ' ':
-        if longestWord < letterCounter:
-            longestWord = letterCounter
-        letterCounter = 0
+        if letterCount > longestWord:
+            longestWord = letterCount
+        letterCount = 0
     else:
-        letterCounter += 1
-print('Длина самого длинного слова:', longestWord)
+        letterCount += 1
+print('Самое длинное слово:', longestWord)
