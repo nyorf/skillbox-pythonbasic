@@ -1,6 +1,11 @@
-lowerborder = int(input('Введите нижнюю границу: '))
-upperborder = int(input('Введите вернхнюю границу: '))
-step = int(input('Введите шаг: '))
+while True:
+    lowerborder = int(input('Введите нижнюю границу: '))
+    upperborder = int(input('Введите вернхнюю границу: '))
+    step = int(input('Введите шаг: '))
+    if step < 0 or upperborder < 0 or lowerborder < 0 or lowerborder > upperborder:
+        print('Проверьте правильность введённых данных!')
+    else:
+        break
 currentCelsius = 0 - step
 currentFarenheit = 0
 print('C°', end='\t')
