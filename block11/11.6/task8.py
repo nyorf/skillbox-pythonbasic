@@ -1,4 +1,5 @@
-minutes = float(input('Сколько минут прошло с начала часа? '))
-answer = minutes * 0.5 # угол поворота часовой стрелки за 1мин = 0.5
-print('\nC начала часа прошло', minutes, 'минут. За это время часовая стрелка повернулась на', answer, 'градусов')
+hourDegree = float(input('Введите угол: '))
+currentHour = int(hourDegree / 30)
+minutesPassedCH = (hourDegree - currentHour * 30) / 0.5
+print('Минутная стрелка повернулась на', minutesPassedCH * 6, 'градусов за последний час')
 
