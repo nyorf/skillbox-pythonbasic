@@ -2,7 +2,7 @@ import random
 
 def rock_paper_scissors():
     print('\n==== Камень-ножницы-бумага ====')
-    print('Ваш ход (введите [камень], [ножницы] или [бумага]:', end=' ')
+    print('\nВаш ход (введите [камень], [ножницы] или [бумага]:', end=' ')
     player = input()
     if player == 'камень':
         player = 1
@@ -31,7 +31,7 @@ def rock_paper_scissors():
 def guess_the_number():
     number = str(random.randint(1, 100))
     print('\n==== Угадай число ====')
-    print('Компьютер загадал число от 1 до 100. Попробуй угадать это число!')
+    print('\nКомпьютер загадал число от 1 до 100. Попробуй угадать это число!')
     print('Если ты захочешь завершить игру, напиши [выход]\n')
     guess = ''
     tries = 0
@@ -63,7 +63,7 @@ def endgamechoice(game):
         mainMenu()
 
 def mainMenu():
-    print('Привет! В какую игру ты хочешь сыграть?')
+    print('\nПривет! В какую игру ты хочешь сыграть?')
     print('\n1. Камень-ножницы-бумага')
     print('2. Угадай число\n')
     menuchoice = int(input('Твой выбор: '))

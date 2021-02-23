@@ -1,9 +1,7 @@
 def numreverse(number):
     reversednum = ''
     for digit in str(number):
-        if digit == '0':
-            continue
-        else:
+        if digit != '0':
             reversednum = digit + reversednum
     print('Число наоборот:', reversednum)
 
