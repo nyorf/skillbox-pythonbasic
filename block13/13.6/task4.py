@@ -1,18 +1,16 @@
 def expnum(number):
-    counter = 0
-    mantissecounter = 0
+    isMantisse = True
+    isOrder = False
     mantisse = ''
     order = ''
     for sym in number:
         if sym == 'e' or sym == 'E':
-            break
-        mantissecounter += 1
-        mantisse += sym
-    for sym in number:
-        if counter > mantissecounter:
+            isMantisse = False
+            isOrder = True
+        elif isMantisse:
+            mantisse += sym
+        elif isOrder:
             order += sym
-        else:
-            counter += 1
     return mantisse, order
 
 mantisse, order = expnum(input('Введите число в эксп. форме: '))

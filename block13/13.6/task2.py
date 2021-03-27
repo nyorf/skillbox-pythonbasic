@@ -2,12 +2,12 @@ def maxnum(check1, check2):
     return (check1 + check2 + abs(check1 - check2)) // 2
 
 def threenumcheck(num1, num2, num3):
-    if maxnum(num1, num2) < maxnum(num2, num3):
-        print('Наибольшее число:', maxnum(num2, num3))
-    elif maxnum(num1, num2) > maxnum(num2, num3):
-        print('Наибольшее число:', maxnum(num1, num2))
+    firstcheck = maxnum(num1, num2)
+    secondcheck = maxnum(num2, num3)
+    if firstcheck < secondcheck:
+        print('Наибольшее число:', secondcheck)
     else:
-        print('Введите три разных числа!')
+        print('Наибольшее число:', firstcheck)
 
 num1 = int(input('Введите первое число: '))
 num2 = int(input('Введите второе число: '))
