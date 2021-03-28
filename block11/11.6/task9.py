@@ -1,7 +1,7 @@
 import math
 
 print('Даны коэффициенты:')
-a = float(input('b = '))
+a = float(input('a = '))
 b = float(input('b = '))
 c = float(input('c = '))
 discriminant = (b ** 2) - (4 * a * c) # формула дискриминанта
