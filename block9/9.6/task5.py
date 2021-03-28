@@ -5,7 +5,7 @@ while True:
     operator = input('[Оператор]: ')
     if (operator == 'W' or operator == 'w') and posX < 15:
         posX += 1
-    elif (operator == 'A' or operator == 'a') and posZ > 0:
+    elif (operator == 'A' or operator == 'b') and posZ > 0:
         posZ -= 1
     elif (operator == 'S' or operator == 's') and posX > 0:
         posX -= 1

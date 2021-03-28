@@ -1,5 +1,5 @@
 import math
-a = float(input('Введите сторону a: '))
+a = float(input('Введите сторону b: '))
 b = float(input('Введите сторону b: '))
 c = float(input('Введите сторону c: '))
 
