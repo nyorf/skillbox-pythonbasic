@@ -1,0 +1,5 @@
+OS info is 
+uname_result(system='Linux', node='olivia', release='5.4.0-70-generic', version='#78-Ubuntu SMP Fri Mar 19 13:29:52 UTC 2021', machine='x86_64', processor='x86_64')
+
+Python version is 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] ('64bit', 'ELF')
