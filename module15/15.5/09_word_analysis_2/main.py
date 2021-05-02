@@ -1,8 +1,8 @@
 word = list(input('Введите слово: '))
 word_reversed = []
 
-for sym in word:
-    word_reversed.insert(0, sym)
+for symnum in range(1, len(word) + 1):
+    word_reversed.append(word[-symnum])
 
 if word == word_reversed:
     print('Слово является палиндромом.')

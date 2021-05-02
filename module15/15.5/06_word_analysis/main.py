@@ -10,3 +10,5 @@ for sym in usrinput:
         uniqueLetters.append(sym)
 
 print('Количество уникальных букв:', len(uniqueLetters))
+
+# зачёт!

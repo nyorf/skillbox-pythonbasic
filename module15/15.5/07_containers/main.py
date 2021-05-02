@@ -2,7 +2,11 @@ containersCount = int(input('Введите количество контейн�
 containers = []
 
 for _ in range(containersCount):
-    containers.append(int(input('Введите вес контейнера: ')))
+    container = int(input('Введите вес контейнера: '))
+    if container > 200:
+        print('Попробуйте снова: число больше 200.')
+    else:
+        containers.append(container)
 
 while True:
     newContainer = int(input('Введите вес нового контейнера: '))
@@ -14,7 +18,7 @@ while True:
 currentindex = -1
 for containerWeight in containers:
     currentindex += 1
-    if containers[currentindex] > newContainer > containers[currentindex + 1]:
+    if containers[currentindex] > newContainer:
         print('Номер, куда встанет новый контейнер:', currentindex + 2)
         break
     elif containers[currentindex] == newContainer == containers[currentindex + 1]:

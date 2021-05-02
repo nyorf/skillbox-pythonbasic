@@ -1,10 +1,3 @@
-def isAvailable(inputlist, request):
-    for item in inputlist:
-        if item == request:
-            return True
-    return False
-
-
 movies = ['Крепкий орешек', 'Назад в будущее', 'Таксист',
          'Леон', 'Богемская рапсодия', 'Город грехов',
          'Мементо', 'Отступники', 'Деревня']
@@ -16,7 +9,7 @@ print('(для выхода из программы наберите "end"\n')
 usrinput = ''
 while True:
     usrinput = input('Введите название фильма: ')
-    if isAvailable(movies, usrinput):
+    if usrinput in movies:
         saved_movies.append(usrinput)
         print('Фильм', usrinput, 'успешно добавлен в избранное!\n')
     elif usrinput == 'end':

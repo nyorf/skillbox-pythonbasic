@@ -1,7 +1,7 @@
 from math import inf as infinity
 from random import randint
 
-#usrlist = [1, 4, -3, 0, 10]
+# usrlist = [1, 4, -3, 0, 10]
 usrlist = []
 for _ in range(20):
     usrlist.append(randint(-100, 100))
