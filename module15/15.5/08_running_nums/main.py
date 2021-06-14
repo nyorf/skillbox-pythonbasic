@@ -1,18 +1,10 @@
-initial_list = [1, 2, 3, 4, 5]
-updated_list = []
+usrlist = [1, 2, 3, 4, 5]
 movefor = int(input('Сдвиг: '))
 
-counter = 0
-while counter != -movefor:
-    counter -= 1
-    updated_list.append(initial_list[counter])
+print('Изначальный список:', usrlist)
 
-for entry in range(len(initial_list) - movefor):
-    updated_list.append(initial_list[entry])
+for _ in range(movefor):
+    usrlist.insert(0, usrlist[len(usrlist) - 1])
+    del usrlist[len(usrlist) - 1]
 
-print('Изначальный список:', initial_list)
-print('Сдвинутый список:', updated_list)
-
-# TODO, предлагаю попробовать решить без дополнительного списка и производить сдвиг сразу в списке,
-#  который получился после ввода пользователя.
-#  Возможно сможем решить вложенными циклами.
+print('Сдвинутый список:', usrlist)

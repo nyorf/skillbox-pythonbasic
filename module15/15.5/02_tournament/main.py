@@ -3,3 +3,4 @@ participants = ['Артемий', 'Борис', 'Влад', 'Гоша', 'Дим�
 for index in range(0, len(participants), 2):
     print(participants[index])
 
+# зачёт!

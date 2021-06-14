@@ -13,3 +13,4 @@ for cell in cells:
     if cells[current_index] < current_index:
         print(cells[current_index], end='; ')
 
+# зачёт!

@@ -7,7 +7,9 @@ for gpu in range(gpu_count):
     print(gpu + 1, 'видеокарта:', end=' ')
     gpu_model = int(input())
     gpus.append(gpu_model)
-    topgpu = max(topgpu, gpu_model)
+    if topgpu < gpu_model:
+        topgpu = gpu_model
+
 
 print('Старый список видеокарт:', gpus)
 for gpu in gpus:
