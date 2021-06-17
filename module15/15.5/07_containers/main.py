@@ -16,7 +16,6 @@ for _ in range(containersCount):
 
 newContainer = numRequest('Введите вес нового контейнера: ')
 
-
 for currentIndex in range(len(containers)):
     if containers[currentIndex] > newContainer > containers[currentIndex + 1]:
         print('\nНомер, куда встанет новый контейнер:', currentIndex + 2)
@@ -26,3 +25,5 @@ for currentIndex in range(len(containers)):
         break
     elif currentIndex == len(containers) - 1:
         print('\nКонтейнер поставить некуда.')
+
+# зачёт!

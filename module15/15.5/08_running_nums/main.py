@@ -14,3 +14,5 @@ for _ in range(shift):
             usrlist[-i] = usrlist[-i - 1]
 
 print('Сдвинутый список:', usrlist)
+
+# зачёт!
