@@ -10,10 +10,11 @@ for gpu in range(gpu_count):
     if topgpu < gpu_model:
         topgpu = gpu_model
 
-
 print('Старый список видеокарт:', gpus)
 for gpu in gpus:
     if gpu != topgpu:
         gpus_redacted.append(gpu)
 
 print('Новый список видеокарт:', gpus_redacted)
+
+# зачёт!

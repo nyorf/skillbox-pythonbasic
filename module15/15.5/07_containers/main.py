@@ -1,31 +1,28 @@
+def numRequest(text):
+    while True:
+        number = int(input(text))
+        if number <= 200:
+            return number
+        else:
+            print('Попробуйте снова: число больше 200.')
+
+
 containersCount = int(input('Введите количество контейнеров: '))
 containers = []
 
 for _ in range(containersCount):
-    while True:
-        container = int(input('Введите вес контейнера: '))
-        if container > 200:
-            print('Попробуйте снова: число больше 200.')
-        else:
-            break
+    container = numRequest('Введите вес контейнера: ')
     containers.append(container)
 
-while True:
-    newContainer = int(input('Введите вес нового контейнера: '))
-    if newContainer > 200:
-        print('Попробуйте снова: число больше 200.')
-    else:
-        break
+newContainer = numRequest('Введите вес нового контейнера: ')
 
-currentindex = -1
-for containerWeight in containers:
-    currentindex += 1
-    if containers[currentindex] > newContainer:
-        print('Номер, куда встанет новый контейнер:', currentindex + 2)
+
+for currentIndex in range(len(containers)):
+    if containers[currentIndex] > newContainer > containers[currentIndex + 1]:
+        print('\nНомер, куда встанет новый контейнер:', currentIndex + 2)
         break
-    elif containers[currentindex] == newContainer == containers[currentindex + 1]:
-        print('Номер, куда встанет новый контейнер:', currentindex + 1)
+    elif containers[currentIndex] == newContainer and newContainer > containers[currentIndex + 1]:
+        print('\nНомер, куда встанет новый контейнер:', currentIndex + 2)
         break
-    else:
-        print('Контейнер поставить некуда.')
-        break
+    elif currentIndex == len(containers) - 1:
+        print('\nКонтейнер поставить некуда.')
