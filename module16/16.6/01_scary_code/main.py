@@ -4,7 +4,8 @@ extra_b = [1, 3, 1, 5, 3, 3]
 
 main.extend(extra_a)
 fives = main.count(5)
-while 5 in main:
+
+for _ in range(fives):
     main.remove(5)
 
 main.extend(extra_b)

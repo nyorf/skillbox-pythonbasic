@@ -1,5 +1,10 @@
-class_one = list(range(160, 177, 2))
-class_two = list(range(162, 181, 3))
-line = class_one + class_two
+line = list(range(160, 177, 2))
+line_ext = line.extend(list(range(162, 181, 3)))
+
+#или так, если всё закинуть в отдельную переменную
+#line = []
+#line.extend(class_one)
+#line.extend(class_two)
+
 line.sort()
 print('Шеренга:', line)

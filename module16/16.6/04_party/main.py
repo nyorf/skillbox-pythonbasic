@@ -11,6 +11,8 @@ while True:
         if action == 'пришёл':
             if len(guests) == 6:
                 print('Прости,', guest_name + ', но мест нет.')
+            elif len(guests) < 6 and guest_name in guests:
+                print(guest_name, 'ты уже и так в списке! Наслаждайся вечеринкой!')
             else:
                 guests.append(guest_name)
                 print('\nПривет,', guest_name + '!')

@@ -23,3 +23,5 @@ for i_name in range(1, songsCount + 1):
         print('Этой песни нету в списке, попробуй ещё раз.')
 
 print('\nОбщее время звучания песен:', round(totalPlaytime, 2))
+
+# зачёт!

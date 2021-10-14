@@ -1,13 +1,30 @@
+def splitListToChunks(usrlist):
+    chunkSize = len(usrlist) // 2
+    splitList = [usrlist[i:i + chunkSize] for i in range(0, len(usrlist), chunkSize)]
+    return splitList
+
+
+def reversedCheck(usrlist):
+    if list(reversed(usrlist[1])) == usrlist[0]:
+        return True
+    else:
+        return False
+
+
 def isSymmetrical(sequence):
     if len(sequence) % 2 != 0:
-        return False
+        sequence.pop(len(sequence) // 2)
+        splitSequence = splitListToChunks(sequence)
+        return reversedCheck(splitSequence)
     else:
-        chunkSize = len(sequence) // 2
-        splitSequence = [sequence[i:i + chunkSize] for i in range(0, len(sequence), chunkSize)]
-        if list(reversed(splitSequence[1])) == splitSequence[0]:
-            return True
-        else:
-            return False
+        splitSequence = splitListToChunks(sequence)
+        return reversedCheck(splitSequence)
+
+
+def reverseListAndPrint(usrlist):
+    usrlist = list(reversed(usrlist))
+    print('Сами числа:', usrlist)
+
 
 numbersCount = int(input('Введите количество чисел в последовательности: '))
 sequence = []
@@ -26,10 +43,24 @@ elif sequence[-1] == sequence[-2]:
     requiredNumbers = sequence.copy()
     for _ in range(2):
         requiredNumbers.pop(-1)
-    requiredNumbers = list(reversed(requiredNumbers))
-    print('Сами числа:', requiredNumbers)
+    reverseListAndPrint(requiredNumbers)
 else:
     print('\nНужно приписать чисел:', len(sequence))
     requiredNumbers = sequence.copy()
-    requiredNumbers = list(reversed(requiredNumbers))
-    print('Сами числа:', requiredNumbers)
+    reverseListAndPrint(requiredNumbers)
+
+
+# Введите количество чисел в последовательности: 5
+# Число: 1
+# Число: 2
+# Число: 1
+# Число: 2
+# Число: 1
+#
+# Последовательность: 12121
+# Нужно приписать чисел: 5
+# Сами числа: [1, 2, 1, 2, 1]
+# TODO, если список симметричен, добавлять в него новые числа не нужно
+#  Предлагаю попробовать идти в цикле по списку чисел и проверять, является ли список палиндромным или нет.
+#  [1, 2, 1, 2, 1, 2] - если нет, сохраняем первое число (1) и проверяем от второго числа и до конца списка.
+#  [2, 1, 2, 1, 2] - если да, значит в конец списка [1, 2, 1, 2, 1, 2] стоит добавить 1, чтобы список стал палиндромным.

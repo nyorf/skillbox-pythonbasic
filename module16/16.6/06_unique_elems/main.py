@@ -12,7 +12,7 @@ for i_num in range(1, 8):
 list_a.extend(list_b)
 
 for num in list_a:
-    while list_a.count(num) > 1:
+    for _ in range(list_a.count(num) - 1):
         list_a.remove(num)
 
 print('Новый первый список с уникальными элементами:', list_a)
