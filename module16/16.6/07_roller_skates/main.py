@@ -17,5 +17,6 @@ for person in people:
         if person <= pair:
             totalRiders += 1
             rollerskates.remove(pair)
+            # TODO, один человек может забрать только одну пару. Если забрал, то из вложенного цикла выходим.
 
 print('Наибольшее количество людей, которые могут взять ролики:', totalRiders)

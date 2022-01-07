@@ -6,7 +6,7 @@ while True:
     if action == 'Пора спать':
         print('Вечеринка закончилась, все легли спать.')
         break
-    else:  
+    else:
         guest_name = input('Имя гостя: ')
         if action == 'пришёл':
             if len(guests) == 6:
@@ -24,3 +24,5 @@ while True:
                 print('Такого гостя на вечеринке нету, попробуй ещё раз.')
         else:
             print('Неверная команда, попробуй ещё раз.')
+
+# зачёт!

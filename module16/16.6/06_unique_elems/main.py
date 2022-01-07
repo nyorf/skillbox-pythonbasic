@@ -16,3 +16,5 @@ for num in list_a:
         list_a.remove(num)
 
 print('Новый первый список с уникальными элементами:', list_a)
+
+# зачёт!
