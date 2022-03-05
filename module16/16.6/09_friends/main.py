@@ -1,5 +1,32 @@
-n = 2 #int(input('Введите количество друзей: '))
-k = 3 #int(input('Введите количество долговых расписок: '))
+def creditorCheck(n):
+    while True:
+        creditor = int(input('Кому: '))
+        if not 0 < creditor <= n:
+            print('Число не может быть <= 0 или быть больше кол-ва друзей\nПопробуйте ввести данные снова:\n')
+        else:
+            return creditor
+
+def borrowerCheck(n):
+    while True:
+        borrower = int(input('От кого: '))
+        if not 0 < borrower <= n:
+            print('Число не может быть <= 0 или быть больше кол-ва друзей\nПопробуйте ввести данные снова:\n')
+        elif borrower == creditor:
+            print('Друг не может занять деньги у самого себя.\nПопробуйте ввести данные снова:\n')
+        else:
+            return borrower
+        
+def amountCheck():
+    while True:
+        amount = int(input('Сколько: '))
+        if amount < 0:
+            print('Число не может быть отрицательным.\nПопробуйте ввести данные снова:\n')
+        else:
+            return amount
+
+
+n = int(input('Введите количество друзей: '))
+k = int(input('Введите количество долговых расписок: '))
 friends = []
 
 for _ in range(n):
@@ -7,29 +34,9 @@ for _ in range(n):
     
 for debt in range(1, k + 1):
     print('\n' + str(debt), 'расписка')
-    while True:
-        creditor = int(input('Кому: '))
-
-        # TODO, предлагаю разделить контроли ввода и реализовать для каждой переменной свой контроль ввода.
-        #  Стоит сократить количество кода внутри основного цикла программы и реализовать функцию для запроса ввода чисел.
-        #  Или просто убрать из решения контроль ввода.
-        #  Таким образом, мы сможем сократить количество повторяющегося кода в решении и разбить наш код на части. =)
-        if not 0 < creditor <= n:
-            print('Число не может быть <= 0 или быть больше кол-ва друзей\nПопробуйте ввести данные снова:\n')
-            continue
-        borrower = int(input('От кого: '))
-        if not 0 < borrower <= n:
-            print('Число не может быть <= 0 или быть больше кол-ва друзей\nПопробуйте ввести данные снова:\n')
-            continue
-        elif borrower == creditor:
-            print('Друг не может занять деньги у самого себя.\nПопробуйте ввести данные снова:\n')
-            continue
-        amount = int(input('Сколько: '))
-        if amount < 0:
-            print('Число не может быть отрицательным.\nПопробуйте ввести данные снова:\n')
-            continue
-        else:
-            break
+    creditor = creditorCheck(n)
+    borrower = borrowerCheck(n)
+    amount = amountCheck()
     friends[creditor - 1] += amount
     friends[borrower - 1] -= amount
 
