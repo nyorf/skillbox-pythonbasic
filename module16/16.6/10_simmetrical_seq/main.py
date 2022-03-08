@@ -1,67 +1,68 @@
-def splitListToChunks(usrlist):
-    chunkSize = len(usrlist) // 2
-    splitList = [usrlist[i:i + chunkSize] for i in range(0, len(usrlist), chunkSize)]
-    return splitList
+def numbersArray(numCount):
+    array = []
+    for _ in range(numCount):
+        array.append(int(input('Число: ')))
+    
+    return array
 
 
-def reversedCheck(usrlist):
-    if list(reversed(usrlist[1])) == usrlist[0]:
-        return True
+def printArray(array):
+    for n in array:
+        print(n, end=' ')
+
+
+def isSymmetrical(array):
+    newArray = array.copy()
+    if len(newArray) % 2 == 0:
+        firsthalf, secondhalf = splitArray(newArray)
+        if firsthalf == reversedArray(secondhalf):
+            return True
     else:
-        return False
+        newArray.pop(len(newArray) // 2)
+        firsthalf, secondhalf = splitArray(newArray)
+        if firsthalf == reversedArray(secondhalf):
+            return True
+    
+    return False
 
 
-def isSymmetrical(sequence):
-    if len(sequence) % 2 != 0:
-        sequence.pop(len(sequence) // 2)
-        splitSequence = splitListToChunks(sequence)
-        return reversedCheck(splitSequence)
-    else:
-        splitSequence = splitListToChunks(sequence)
-        return reversedCheck(splitSequence)
+def reversedArray(array):
+    newArray = []
+    for n in range(len(array) - 1, -1, -1):
+        newArray.append(array[n])
+    
+    return newArray
 
 
-def reverseListAndPrint(usrlist):
-    usrlist = list(reversed(usrlist))
-    print('Сами числа:', usrlist)
+def splitArray(array):
+    firsthalf, secondhalf = [], []
+    for i in range(len(array)):
+        if i + 1 <= len(array) // 2:
+            firsthalf.append(array[i])
+        else:
+            secondhalf.append(array[i])
+    
+    return firsthalf, secondhalf
 
 
-numbersCount = int(input('Введите количество чисел в последовательности: '))
-sequence = []
+def completeArray(array):
+    completion = array.copy()
+    completion.pop(-1)
+    if completion[-1] == array[-1]:
+        completion.pop(-1)
+    
+    return reversedArray(completion), len(completion)
 
-for number in range(numbersCount):
-    sequence.append(int(input('Число: ')))
+
+numCount = int(input('Кол-во чисел: '))
+numbers = numbersArray(numCount)
 
 print('\nПоследовательность:', end=' ')
-for number in sequence:
-    print(number, end='')
-
-if isSymmetrical(sequence):
-    print('\nДописывать числа не нужно, последовательность и так симметрична.')
-elif sequence[-1] == sequence[-2]:
-    print('\nНужно приписать чисел:', len(sequence) - 2)
-    requiredNumbers = sequence.copy()
-    for _ in range(2):
-        requiredNumbers.pop(-1)
-    reverseListAndPrint(requiredNumbers)
+printArray(numbers)
+if isSymmetrical(numbers):
+    print('\nПоследовательность симметрична, дописывать числа не требуется.')
 else:
-    print('\nНужно приписать чисел:', len(sequence))
-    requiredNumbers = sequence.copy()
-    reverseListAndPrint(requiredNumbers)
-
-
-# Введите количество чисел в последовательности: 6
-# Число: 1
-# Число: 2
-# Число: 1
-# Число: 2
-# Число: 1
-# Число: 2
-#
-# Последовательность: 121212
-# Нужно приписать чисел: 6
-# Сами числа: [2, 1, 2, 1, 2, 1]
-# TODO, В данном случае, стоит добавить в список всего одно число => 1. =)
-#  Предлагаю попробовать идти в цикле по списку чисел и проверять, является ли список палиндромным или нет.
-#  [1, 2, 1, 2, 1, 2] - если нет, сохраняем первое число (1) и проверяем от второго числа и до конца списка.
-#  [2, 1, 2, 1, 2] - если да, значит в конец списка [1, 2, 1, 2, 1, 2] стоит добавить 1, чтобы список стал палиндромным.
+    reqNumbersArray, reqNumbersCount = completeArray(numbers)
+    print('\nНужно приписать чисел:', reqNumbersCount)
+    print('Сами числа:', end=" ")
+    printArray(reqNumbersArray)
