@@ -14,6 +14,8 @@ def printArray(array):
 def isSymmetrical(array):
     newArray = array.copy()
     if len(newArray) % 2 == 0:
+        # TODO Предлагаю попробовать сократить количество повторяющихся строк кода до одной.
+        #  Если строка встречается в каждом блоке условного оператора, стоит подумать, как вынести её за пределы условного оператора.
         firsthalf, secondhalf = splitArray(newArray)
         if firsthalf == reversedArray(secondhalf):
             return True
