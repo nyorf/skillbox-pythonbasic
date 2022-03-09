@@ -46,10 +46,12 @@ def splitArray(array):
 
 
 def completeArray(array):
-    completion = array.copy()
-    completion.pop(-1)
-    if completion[-1] == array[-1]:
-        completion.pop(-1)
+    completion, newArray = [], array.copy()
+    while len(newArray) > 1:
+        completion.append(newArray[0])
+        newArray.pop(0)
+        if isSymmetrical(newArray):
+            return reversedArray(completion), len(completion)
     
     return reversedArray(completion), len(completion)
 
