@@ -2,12 +2,17 @@ from random import randint
 
 n = int(input('Количество чисел в списке: '))
 original_array = [randint(0, 2) for _ in range(n)]
-compressed_array = [num for num in original_array if num > 0]
 
 print('Список до сжатия:', original_array)
+
+compressed_array_zeros = [elem for elem in original_array if elem != 0]
+compressed_array_zeros.extend([elem for elem in original_array if elem == 0])
+
+print('Список с нулями:', compressed_array_zeros)
+
+compressed_array = [elem for elem in compressed_array_zeros if elem != 0]
+
 print('Список после сжатия:', compressed_array)
 
-# TODO, пожалуйста, обратите внимание, нам необходимо вывести 3 списка:
-#  1. начальный.
-#  2. с 0 в конце исходя из начального списка.
-#  3. начальный, но без 0.
+# пока не догадываюсь как более эффективно это реализовать
+# только через list comprehensions :(
