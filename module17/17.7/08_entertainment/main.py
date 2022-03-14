@@ -14,3 +14,5 @@ for t in range(1, throws + 1):
 print('Результат:', end=' ')
 for elem in row:
     print(elem, end='')
+
+# зачёт!
