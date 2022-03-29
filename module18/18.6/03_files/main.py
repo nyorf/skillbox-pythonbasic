@@ -3,7 +3,7 @@ def forbidden_chars(string):
     for sym in chars:
         if string.startswith(sym):
             return True
-    
+
     return False
 
 
@@ -12,7 +12,7 @@ def allowed_exts(string):
     for ext in extenstions:
         if string.endswith(ext):
             return True
-    
+
     return False
 
 
@@ -24,3 +24,5 @@ elif not allowed_exts(file_name):
     print('\nОшибка: неверное расширение файла. Ожидалось .txt или .docx.')
 else:
     print('\nФайл назван верно.')
+
+# зачёт!

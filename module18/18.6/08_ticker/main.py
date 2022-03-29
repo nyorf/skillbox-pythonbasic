@@ -1,13 +1,9 @@
 def shift_check(first_string, second_string):
+    # TODO, предлагаю производить сдвиг без использования вложенного цикла.
+    #  При помощи срезов, в одну строку кода.
     check_array = second_string[:]
     for shift in range(1, len(second_string)):
-        check_array.append(check_array[0])
-        check_array.pop(0)
-        if check_array == first_string:
-            return shift
-    else:
-        return 0
-        
+        check_array[:shift], check_array[-shift:] = check_array[-shift:], check_array[:shift]
 
 while True:
     first_string = list(input('Первая строка: '))

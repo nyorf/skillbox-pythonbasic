@@ -6,3 +6,5 @@ print('Результат:', capitalized_string)
 '''
 string = input('Введите строку: ').title()
 print('Результат:', string)
+
+# зачёт!
