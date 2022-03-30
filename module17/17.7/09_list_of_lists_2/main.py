@@ -1,16 +1,6 @@
 nice_list = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]],
              [[10, 11, 12], [13, 14, 15], [16, 17, 18]]]
 
-new_list = [elem for i in range(len(nice_list)) 
-            for j in range(len(nice_list[i])) 
-            for elem in nice_list[i][j]]
+new_list = [elem for second_layer in nice_list for first_layer in second_layer for elem in first_layer]
 
 print(new_list)
-
-# придумал только как решить проблему с "если добавить ещё элемент то сломается"
-# пока не знаю как можно сделать по другому, без range
-
-# TODO, предлагаю решить задание без использования range и len.
-#  Обычными циклами по спискам внутри List comprehensions.
-#  Ведь, если добавить элементы в один из списков, код тоже придётся менять.
-#  + поиск элемента по индексу создаёт лишнюю нагрузку на код.
